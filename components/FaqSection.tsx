@@ -30,7 +30,7 @@ export function FaqSection() {
             <AccordionItem
               key={idx}
               value={`item-${idx}`}
-              className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 px-5 shadow-sm hover:shadow-md transition-shadow"
+              className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 px-5 transition-colors hover:border-blue-200 dark:hover:border-blue-800"
             >
               <AccordionTrigger className="text-left font-semibold text-slate-800 dark:text-white hover:no-underline py-5 gap-4">
                 <span className="flex gap-3 items-start">
