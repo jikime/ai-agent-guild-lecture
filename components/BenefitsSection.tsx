@@ -46,19 +46,19 @@ const BENEFITS = [
 
 export function BenefitsSection() {
   return (
-    <section className="py-24 bg-slate-50 dark:bg-slate-900/50">
+    <section className="py-16 sm:py-24 bg-slate-50 dark:bg-slate-900/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* 섹션 헤더 */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 sm:mb-16">
           <Badge className="bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300 mb-4 px-3 py-1">
             수강 특전
           </Badge>
-          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4 flex items-center justify-center gap-3">
-            <Gift className="w-8 h-8 text-amber-500" />
+          <h2 className="text-2xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4 flex flex-col items-center justify-center gap-2 sm:flex-row sm:gap-3">
+            <Gift className="w-7 h-7 sm:w-8 sm:h-8 text-amber-500" />
             수강생 전원 제공
           </h2>
-          <p className="text-slate-500 dark:text-slate-400 text-lg max-w-2xl mx-auto">
+          <p className="text-slate-500 dark:text-slate-400 text-base sm:text-lg max-w-2xl mx-auto">
             강의 수강만으로 끝나지 않습니다. 바로 실무에 적용할 수 있는 자료 일체를 드립니다.
           </p>
         </div>
@@ -68,9 +68,9 @@ export function BenefitsSection() {
           {BENEFITS.map(({ icon: Icon, title, description, tags, color, bg, border }) => (
             <div
               key={title}
-              className={`rounded-2xl border ${border} bg-white dark:bg-slate-900 p-6 flex flex-col gap-4 hover:-translate-y-0.5 transition-transform duration-200`}
+              className={`rounded-2xl border ${border} bg-white dark:bg-slate-900 p-5 sm:p-6 flex flex-col gap-4 hover:-translate-y-0.5 transition-transform duration-200`}
             >
-              <div className="flex items-start gap-4">
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-start">
                 <div className={`w-11 h-11 rounded-xl ${bg} flex items-center justify-center flex-shrink-0`}>
                   <Icon className={`w-5 h-5 ${color}`} />
                 </div>
@@ -99,7 +99,7 @@ export function BenefitsSection() {
 
         {/* 하단 강조 문구 */}
         <div className="mt-12 text-center">
-          <div className="inline-flex items-center gap-2 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800/40 text-amber-700 dark:text-amber-300 px-5 py-3 rounded-full text-sm font-medium">
+          <div className="inline-flex items-start gap-2 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800/40 text-amber-700 dark:text-amber-300 px-4 sm:px-5 py-3 rounded-2xl sm:rounded-full text-sm font-medium text-left">
             <Gift className="w-4 h-4" />
             모든 특전은 수강 신청 확인 후 강의 당일 또는 종료 후 순차 제공됩니다
           </div>

@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/sheet";
 import { Moon, Sun, Zap, Menu } from "lucide-react";
 import { useTheme } from "next-themes";
+import { PAYMENT_LINK } from "@/lib/data";
 
 const NAV_ITEMS = [
   { label: "커리큘럼", href: "#curriculum" },
@@ -25,10 +26,14 @@ export function Navbar() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
+    const frame = requestAnimationFrame(() => setMounted(true));
     const handleScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    handleScroll();
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const handleNavClick = (href: string) => {
@@ -50,12 +55,12 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+          <Link href="/" className="flex min-w-0 items-center gap-2">
+            <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
               <Zap className="w-5 h-5 text-white" />
             </div>
             <span
-              className={`font-bold text-lg transition-colors ${
+              className={`truncate text-base font-bold transition-colors sm:text-lg ${
                 scrolled ? "text-slate-900 dark:text-white" : "text-white"
               }`}
             >
@@ -101,7 +106,7 @@ export function Navbar() {
 
             {/* CTA Button (desktop) */}
             <div className="hidden md:block">
-              <Link href="/payment">
+              <Link href={PAYMENT_LINK}>
                 <Button className="bg-blue-600 hover:bg-blue-700 text-white">
                   수강 신청
                 </Button>
@@ -120,7 +125,7 @@ export function Navbar() {
                 >
                   <Menu className="w-5 h-5" />
                 </SheetTrigger>
-                <SheetContent side="right" className="w-72">
+                <SheetContent side="right" className="w-[min(18rem,calc(100vw-2rem))]">
                   <div className="flex flex-col gap-6 pt-8">
                     <div className="flex items-center gap-2">
                       <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
@@ -139,7 +144,7 @@ export function Navbar() {
                         </button>
                       ))}
                     </nav>
-                    <Link href="/payment" onClick={() => setOpen(false)}>
+                    <Link href={PAYMENT_LINK} onClick={() => setOpen(false)}>
                       <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
                         수강 신청
                       </Button>

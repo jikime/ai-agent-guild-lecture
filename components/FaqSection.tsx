@@ -9,17 +9,17 @@ import { COURSE_DATA } from "@/lib/data";
 
 export function FaqSection() {
   return (
-    <section id="faq" className="py-24 bg-slate-50 dark:bg-slate-900/50">
+    <section id="faq" className="py-16 sm:py-24 bg-slate-50 dark:bg-slate-900/50">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 sm:mb-16">
           <Badge className="bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300 mb-4 px-3 py-1">
             FAQ
           </Badge>
-          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4">
+          <h2 className="text-2xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4">
             자주 묻는 질문
           </h2>
-          <p className="text-slate-500 dark:text-slate-400 text-lg">
+          <p className="text-slate-500 dark:text-slate-400 text-base sm:text-lg">
             궁금하신 점이 있으시면 아래를 확인해보세요
           </p>
         </div>
@@ -30,7 +30,7 @@ export function FaqSection() {
             <AccordionItem
               key={idx}
               value={`item-${idx}`}
-              className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 px-5 transition-colors hover:border-blue-200 dark:hover:border-blue-800"
+              className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 px-4 sm:px-5 transition-colors hover:border-blue-200 dark:hover:border-blue-800"
             >
               <AccordionTrigger className="text-left font-semibold text-slate-800 dark:text-white hover:no-underline py-5 gap-4">
                 <span className="flex gap-3 items-start">

@@ -30,7 +30,7 @@ export function Footer() {
           </div>
 
           {/* Links */}
-          <nav className="flex flex-wrap gap-x-6 gap-y-2">
+          <nav className="flex flex-wrap gap-x-5 gap-y-2">
             {LINKS.map((link) => (
               <a
                 key={link.label}
@@ -45,7 +45,7 @@ export function Footer() {
 
         <Separator className="bg-slate-800 mb-6" />
 
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs">
           <p>© 2025 Harness Academy. All rights reserved.</p>
           <p className="text-slate-600">
             Powered by Claude Code Harness Engineering

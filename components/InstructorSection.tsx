@@ -5,7 +5,7 @@ import { BookOpen, Users, Layers } from "lucide-react";
 const BOOKS = [
   {
     title: "하네스 엔지니어링 백과사전",
-    desc: "15장 본문 + 11개 부록 · 조회수 7만+",
+    desc: "15장 본문 + 11개 부록 · 조회수 8만+",
     color: "bg-blue-50 dark:bg-blue-900/20 border-blue-100 dark:border-blue-800/30 text-blue-700 dark:text-blue-300",
   },
   {
@@ -23,18 +23,18 @@ const ROLES = [
 
 export function InstructorSection() {
   return (
-    <section id="instructors" className="py-24 bg-slate-50 dark:bg-slate-900/50">
+    <section id="instructors" className="py-16 sm:py-24 bg-slate-50 dark:bg-slate-900/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* 섹션 헤더 */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 sm:mb-16">
           <Badge className="bg-purple-100 text-purple-700 dark:bg-purple-900/40 dark:text-purple-300 mb-4 px-3 py-1">
             Instructor
           </Badge>
-          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4">
+          <h2 className="text-2xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4">
             강사 소개
           </h2>
-          <p className="text-slate-500 dark:text-slate-400 text-lg">
+          <p className="text-slate-500 dark:text-slate-400 text-base sm:text-lg">
             현업 전문가가 실전 노하우를 직접 전달합니다
           </p>
         </div>
@@ -44,12 +44,20 @@ export function InstructorSection() {
           <div className="rounded-2xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden">
             <div className="h-1.5 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500" />
 
-            <div className="p-8 sm:p-10 flex flex-col sm:flex-row gap-8 items-center sm:items-start">
+            <div className="p-5 sm:p-10 flex flex-col sm:flex-row gap-6 sm:gap-8 items-center sm:items-start">
 
               {/* 프로필 이미지 */}
               <div className="flex-shrink-0">
-                <div className="relative w-36 h-36 rounded-2xl overflow-hidden ring-4 ring-blue-100 dark:ring-blue-900/40">
-                  <Image src="/images/anthony_profile.png" alt="Anthony 강사" fill className="object-cover" />
+                <div className="relative aspect-[3/4] w-36 sm:w-44 rounded-2xl overflow-hidden ring-4 ring-blue-100 dark:ring-blue-900/40">
+                  <Image
+                    src="/images/instructor_anthony.jpeg"
+                    alt="Anthony 강사"
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 640px) 176px, 144px"
+                    priority
+                    unoptimized
+                  />
                 </div>
               </div>
 
@@ -67,7 +75,7 @@ export function InstructorSection() {
                 {/* 역할 목록 */}
                 <div className="flex flex-col gap-1.5 mb-5">
                   {ROLES.map(({ icon: Icon, label }) => (
-                    <div key={label} className="flex items-center justify-center sm:justify-start gap-2">
+                    <div key={label} className="flex items-start justify-center sm:justify-start gap-2">
                       <Icon className="w-4 h-4 text-blue-500 flex-shrink-0" />
                       <span className="text-sm font-semibold text-slate-700 dark:text-slate-300">{label}</span>
                     </div>
@@ -80,7 +88,7 @@ export function InstructorSection() {
                   AI 에이전트와 개발 방식의 변화를 관찰·정리해 왔습니다.
                   하네스 엔지니어링을 누구나 자신의 업무에 연결해 배울 수 있도록
                   일상 비유와 실전 사례로 풀어낸 백과사전을 집필했으며,
-                  출판 이후 7만 조회수를 기록하며 큰 관심을 받았습니다.
+                  출판 이후 8만 조회수를 기록하며 큰 관심을 받았습니다.
                 </p>
 
                 {/* 저서 */}
@@ -90,7 +98,7 @@ export function InstructorSection() {
                     {BOOKS.map(({ title, desc, color }) => (
                       <div key={title} className={`flex items-start gap-3 rounded-xl border px-4 py-3 ${color}`}>
                         <BookOpen className="w-4 h-4 flex-shrink-0 mt-0.5" />
-                        <div>
+                        <div className="min-w-0">
                           <p className="text-sm font-semibold whitespace-pre-line leading-snug">{title}</p>
                           <p className="text-xs opacity-70 mt-0.5">{desc}</p>
                         </div>

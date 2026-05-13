@@ -55,10 +55,10 @@ export function PaymentForm() {
 
   return (
     <>
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         {/* 페이지 헤더 */}
-        <div className="mb-10">
-          <h1 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">
+        <div className="mb-8 sm:mb-10">
+          <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-2">
             수강 신청
           </h1>
           <p className="text-slate-500 dark:text-slate-400">
@@ -66,15 +66,15 @@ export function PaymentForm() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-8">
 
           {/* 왼쪽: 요약 패널 — div 기반 */}
           <div className="lg:col-span-2">
-            <div className="sticky top-24 rounded-2xl border-2 border-blue-100 dark:border-blue-900/40 bg-white dark:bg-slate-900 overflow-hidden">
+            <div className="lg:sticky lg:top-24 rounded-2xl border-2 border-blue-100 dark:border-blue-900/40 bg-white dark:bg-slate-900 overflow-hidden">
               {/* 상단 바 */}
               <div className="h-1 bg-gradient-to-r from-blue-500 to-indigo-500" />
 
-              <div className="p-6">
+              <div className="p-5 sm:p-6">
                 <h2 className="text-base font-bold text-slate-900 dark:text-white mb-5">
                   신청 정보 요약
                 </h2>
@@ -112,14 +112,14 @@ export function PaymentForm() {
                   </div>
 
                   <div className="pt-4 border-t border-slate-100 dark:border-slate-800">
-                    <div className="flex justify-between items-center mb-4">
+                    <div className="flex flex-col gap-1 sm:flex-row sm:justify-between sm:items-center mb-4">
                       <span className="text-slate-500 dark:text-slate-400 text-sm">최종 결제 금액</span>
                       <span className="text-2xl font-black text-blue-600 dark:text-blue-400">
                         {currentOption.price.toLocaleString()}원
                       </span>
                     </div>
                     <div className="rounded-xl bg-blue-50 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-800/30 p-3">
-                      {["온라인 강의 참여", "소그룹 Tech 리더 가이드", "실습 자료 제공", "강의 녹화본 (7일)"].map((item) => (
+                      {["온라인 강의 참여", "소그룹 Tech 리더 가이드", "실습 자료 제공", "강의 녹화본 무제한 제공"].map((item) => (
                         <div key={item} className="flex items-center gap-2 py-0.5">
                           <CheckCircle className="w-3.5 h-3.5 text-blue-500 flex-shrink-0" />
                           <span className="text-xs text-slate-600 dark:text-slate-300">{item}</span>
@@ -137,7 +137,7 @@ export function PaymentForm() {
             <form onSubmit={handleSubmit} className="flex flex-col gap-5">
 
               {/* 기본 정보 */}
-              <div className="rounded-2xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 p-6">
+              <div className="rounded-2xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 p-5 sm:p-6">
                 <h2 className="text-base font-bold text-slate-900 dark:text-white mb-5">기본 정보</h2>
                 <div className="flex flex-col gap-4">
                   {[
@@ -165,19 +165,19 @@ export function PaymentForm() {
               </div>
 
               {/* 수강 옵션 */}
-              <div className="rounded-2xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 p-6">
+              <div className="rounded-2xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 p-5 sm:p-6">
                 <h2 className="text-base font-bold text-slate-900 dark:text-white mb-5">수강 옵션</h2>
                 <div className="flex flex-col gap-2.5">
                   {PAYMENT_OPTIONS.map((option) => (
                     <label
                       key={option.value}
-                      className={`flex items-center justify-between p-4 rounded-xl border-2 cursor-pointer transition-all duration-200 ${
+                      className={`flex flex-col items-start gap-3 p-4 rounded-xl border-2 cursor-pointer transition-all duration-200 sm:flex-row sm:items-center sm:justify-between ${
                         selectedOption === option.value
                           ? "border-blue-500 bg-blue-50 dark:bg-blue-900/20"
                           : "border-slate-100 dark:border-slate-800 hover:border-slate-200 dark:hover:border-slate-700"
                       }`}
                     >
-                      <div className="flex items-center gap-3">
+                      <div className="flex items-start gap-3">
                         <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center flex-shrink-0 ${selectedOption === option.value ? "border-blue-500" : "border-slate-300 dark:border-slate-600"}`}>
                           {selectedOption === option.value && (
                             <div className="w-2 h-2 bg-blue-500 rounded-full" />
@@ -198,9 +198,9 @@ export function PaymentForm() {
               </div>
 
               {/* 결제 방법 */}
-              <div className="rounded-2xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 p-6">
+              <div className="rounded-2xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 p-5 sm:p-6">
                 <h2 className="text-base font-bold text-slate-900 dark:text-white mb-5">결제 방법</h2>
-                <div className="grid grid-cols-3 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                   {PAYMENT_METHODS.map((method) => (
                     <label
                       key={method.value}

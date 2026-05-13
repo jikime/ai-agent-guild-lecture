@@ -81,7 +81,7 @@ export const COURSE_DATA = {
     },
     {
       q: "강의 녹화본을 제공하나요?",
-      a: "강의 종료 후 7일간 전체 녹화본을 제공합니다. 실습 자료와 Harness Lab 환경도 함께 제공되어 강의 후에도 충분히 복습하실 수 있습니다.",
+      a: "강의 종료 후 전체 녹화본을 무제한 제공합니다. 실습 자료와 Harness Lab 환경도 함께 제공되어 강의 후에도 충분히 복습하실 수 있습니다.",
     },
     {
       q: "환불 정책은 어떻게 되나요?",
@@ -93,6 +93,9 @@ export const COURSE_DATA = {
     },
   ],
 };
+
+export const PAYMENT_LINK =
+  "https://cpay.payple.kr/php/link/?SID=MzUxMjo3Nzg2MzM5NTc2MTAzMg";
 
 export const PAYMENT_OPTIONS = [
   { value: "all", label: "전체 묶음 (3회차)", price: 190000, recommended: true },

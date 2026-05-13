@@ -58,34 +58,34 @@ const FEATURES = [
 
 export function AboutSection() {
   return (
-    <section className="py-24 bg-slate-50 dark:bg-slate-900/50">
+    <section className="py-16 sm:py-24 bg-slate-50 dark:bg-slate-900/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* 핵심 가치 배너 */}
-        <div className="rounded-2xl border border-blue-100 dark:border-blue-900/40 bg-blue-50 dark:bg-blue-900/10 p-6 sm:p-8 mb-16 text-center max-w-3xl mx-auto">
+        <div className="rounded-2xl border border-blue-100 dark:border-blue-900/40 bg-blue-50 dark:bg-blue-900/10 p-5 sm:p-8 mb-12 sm:mb-16 text-center max-w-3xl mx-auto">
           <Layers className="w-8 h-8 text-blue-500 mx-auto mb-3" />
           <p className="text-lg sm:text-xl font-bold text-slate-800 dark:text-white mb-2">
             하네스 엔지니어링 = AI 시대의 업무 운영체제
           </p>
           <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-            AI를 잘 쓰는 사람은 <span className="line-through text-slate-400">질문을 잘 쓰는 사람</span>에서,<br />
+            AI를 잘 쓰는 사람은 <span className="line-through text-slate-400">질문을 잘 쓰는 사람</span>에서,<br className="hidden sm:block" />
             <span className="font-semibold text-blue-600 dark:text-blue-400">AI가 일하는 환경을 잘 설계하는 사람</span>으로 바뀌고 있습니다.
           </p>
         </div>
 
         {/* 섹션 헤더 */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4">
+          <h2 className="text-2xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4">
             이런 분들께 추천합니다
           </h2>
         </div>
 
         {/* 대상 카드 */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 mb-16 sm:mb-20">
           {TARGET_CARDS.map(({ icon: Icon, title, description, color, bg, border, num }) => (
             <div
               key={title}
-              className={`rounded-2xl border ${border} bg-white dark:bg-slate-800 p-6 hover:-translate-y-1 transition-transform duration-300`}
+              className={`rounded-2xl border ${border} bg-white dark:bg-slate-800 p-5 sm:p-6 hover:-translate-y-1 transition-transform duration-300`}
             >
               <div className="flex items-start justify-between mb-4">
                 <div className={`w-12 h-12 rounded-xl ${bg} flex items-center justify-center`}>
@@ -100,7 +100,7 @@ export function AboutSection() {
         </div>
 
         {/* Before / After */}
-        <div className="mb-20">
+        <div className="mb-16 sm:mb-20">
           <div className="text-center mb-10">
             <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-2">
               수강 전 vs 수강 후
@@ -111,11 +111,11 @@ export function AboutSection() {
           </div>
           <div className="max-w-3xl mx-auto flex flex-col gap-3">
             {BEFORE_AFTER.map(({ before, after }) => (
-              <div key={before} className="grid grid-cols-[1fr_auto_1fr] items-center gap-3">
-                <div className="rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-4 py-3 text-right">
+              <div key={before} className="flex flex-col items-stretch gap-2 sm:grid sm:grid-cols-[1fr_auto_1fr] sm:items-center sm:gap-3">
+                <div className="rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-4 py-3 text-center sm:text-right">
                   <span className="text-sm text-slate-400 dark:text-slate-500">{before}</span>
                 </div>
-                <div className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-600 text-white text-sm font-bold flex-shrink-0">→</div>
+                <div className="mx-auto flex items-center justify-center w-8 h-8 rounded-full bg-blue-600 text-white text-sm font-bold flex-shrink-0 rotate-90 sm:rotate-0">→</div>
                 <div className="rounded-xl bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-700/40 px-4 py-3">
                   <span className="text-sm text-blue-700 dark:text-blue-300 font-medium">{after}</span>
                 </div>

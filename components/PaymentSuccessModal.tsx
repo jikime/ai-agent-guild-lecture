@@ -31,15 +31,15 @@ export function PaymentSuccessModal({
         <DialogHeader>
           <DialogTitle className="sr-only">수강 신청 완료</DialogTitle>
         </DialogHeader>
-        <div className="flex flex-col items-center text-center py-4 gap-5">
+        <div className="flex flex-col items-center text-center py-3 sm:py-4 gap-5">
           {/* Success Icon */}
-          <div className="w-20 h-20 bg-emerald-100 dark:bg-emerald-900/30 rounded-full flex items-center justify-center">
-            <CheckCircle className="w-10 h-10 text-emerald-500" />
+          <div className="w-16 h-16 sm:w-20 sm:h-20 bg-emerald-100 dark:bg-emerald-900/30 rounded-full flex items-center justify-center">
+            <CheckCircle className="w-8 h-8 sm:w-10 sm:h-10 text-emerald-500" />
           </div>
 
           {/* Message */}
           <div>
-            <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
+            <h2 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white mb-2">
               수강 신청이 완료되었습니다!
             </h2>
             <p className="text-sm text-slate-500 dark:text-slate-400">
@@ -50,19 +50,19 @@ export function PaymentSuccessModal({
           {/* Summary */}
           <div className="w-full bg-slate-50 dark:bg-slate-800 rounded-xl p-4 text-sm">
             <div className="flex flex-col gap-2">
-              <div className="flex justify-between">
+              <div className="flex justify-between gap-4">
                 <span className="text-slate-500 dark:text-slate-400">신청자</span>
                 <span className="font-semibold text-slate-900 dark:text-white">
                   {name}
                 </span>
               </div>
-              <div className="flex justify-between">
+              <div className="flex justify-between gap-4">
                 <span className="text-slate-500 dark:text-slate-400">강의</span>
                 <span className="font-semibold text-slate-900 dark:text-white text-right max-w-[180px]">
                   {option}
                 </span>
               </div>
-              <div className="flex justify-between">
+              <div className="flex justify-between gap-4">
                 <span className="text-slate-500 dark:text-slate-400">결제 금액</span>
                 <span className="font-bold text-blue-600 dark:text-blue-400">
                   {price.toLocaleString()}원
